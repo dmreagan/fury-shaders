@@ -5,6 +5,10 @@ vertex shader with VTK's shader template system.
 
 In this example, we will create a cube and use a vertex shader to distort its
 shape.
+
+This example borrows heavily from the FURY surfaces example.
+http://fury.gl/dev/auto_examples/viz_surfaces.html
+https://github.com/fury-gl/fury/blob/master/docs/examples/viz_surfaces.py
 '''
 
 import numpy as np
@@ -51,11 +55,6 @@ mapper = cube_actor.GetMapper()
 scene = window.Scene()
 scene.add(cube_actor)
 window.show(scene, size=(500, 500))
-
-# now let's color the vertices by their position
-# my_colors = my_vertices * 255 # transform from [0, 1] to [0, 255]
-# utils.set_polydata_colors(my_polydata, my_colors)
-# window.show(scene, size=(500, 500))
 
 # let's say we want to distort the vertex positions using some data
 # we can pass per-vertex data into the shader in an array which has the same
